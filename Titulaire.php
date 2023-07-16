@@ -13,32 +13,44 @@ class Titulaire{
         $this->_ville = $ville;
         $this->_compte = [];
     }
+////////////////////////////////////////////////////////////////////////////////////////////////
+
     public function addCompte($compte){
         $this->_compte[] = $compte;
     }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
     public function getNom():string {
         return $this->_nom;
     }
     public function setNom(string $nom){
         return $this->_nom = $nom;
     }
+////////////////////////////////////////////////////////////////////////////////////////////////
+
     public function getPrenom():string {
         return $this->_prenom;
     }
     public function setPrenom(string $prenom) {
         return $this->_prenom = $prenom;
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
     public function getDate():string { 
         return $this->_date;
     }
     public function setDate(string $date) {
         return $this->_date = $date;
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
     public function getVille():string { 
         return $this->_ville;
     }
     public function setVille(String $ville) {
         return $this->_ville = $ville;
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 }
 ?>
