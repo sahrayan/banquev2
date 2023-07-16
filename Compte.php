@@ -52,5 +52,9 @@ class Compte{
         $this->_solde += $montant;
         echo "Vous venez de crediter de ".$montant." euro <br>";
     }
+    public function Debiter($montant){
+        $this->_solde -= $montant;
+        echo "Vous venez de debiter de ".$montant." euro <br>";
+    }
 }
 ?>
