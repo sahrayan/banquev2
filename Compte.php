@@ -30,7 +30,7 @@ class Compte{
 
 
     public function getDevise():string {
-        return $this->_nom;
+        return $this->_devise;
     }
     public function setDevise(string $devise){
         return $this->_devise = $devise;
@@ -55,6 +55,18 @@ class Compte{
     public function Debiter($montant){
         $this->_solde -= $montant;
         echo "Vous venez de debiter de ".$montant." euro <br>";
+    }
+    public function virementVersCompte(Compte $compteDestination, int $montant) {
+        if ($this->_solde >= $montant) {
+            $this->Debiter($montant);
+            $compteDestination->Crediter($montant);
+            echo "Virement de {$montant} {$this->_devise} effectué avec succès vers le compte de {$compteDestination->getTitulaire()->getPrenom()} {$compteDestination->getTitulaire()->getNom()}" . PHP_EOL;
+        } else {
+            echo "Solde insuffisant pour effectuer le virement." . PHP_EOL;
+        }
+    }
+    public function BanqueInfo(){
+        echo "445463715442****<br>".$this->_libelle."<br>".$this->_solde." ".$this->_devise."<br>";
     }
 }
 ?>
