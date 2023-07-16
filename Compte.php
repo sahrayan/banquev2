@@ -36,12 +36,16 @@ class Compte{
         return $this->_devise = $devise;
     }
 
-    
+
     public function getTitulaire():Titulaire {
         return $this->_titulaire;
     }
     public function setTitulaire(Titulaire $titulaire){
         return $this->_titulaire = $titulaire;
+    }
+
+    public function __toString(){
+        return $this->getSolde() .$this->getDevise() .$this->getTitulaire() ."<br>";
     }
 }
 ?>
