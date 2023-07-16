@@ -1,9 +1,9 @@
 <?php
 class Titulaire{
-    private string$_nom;
-    private string$_prenom;
-    private string$_date;
-    private string$_ville;
+    private string $_nom;
+    private string $_prenom;
+    private string $_date;
+    private string $_ville;
     private array $_compte;
 
     function __construct(string $nom,string $prenom, string $date, string $ville){
@@ -52,5 +52,31 @@ class Titulaire{
         return $this->_ville = $ville;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public function DispInfo(){
+        //calcul de l'age a partire d'une date de naissance.
+        $dateNaissance = date_create($this->_date);
+        $aujourdhui = date("Y-m-d");
+        $age = date_diff($dateNaissance, date_create($aujourdhui));
+        echo $this->_nom."<br>";
+        echo $this->_prenom."<br>";
+        //format de l'age
+        echo $age->format('%y ans')."<br>";
+        echo $this->_ville."<br>";
+    
+//utilise foreach pour afficher la list des comptes
+            foreach($this->_compte as $compte){
+                $compte->BanqueInfo()."<br>";
+            }
+    }
+
+    public function __toString(){
+        return $this->getNom()."<br>".$this->getPrenom()."<br>". $this->DispInfo()."<br>". $this->getVille()."<br>";
+        foreach ($this->_compte as $compte){
+            echo $compte."<br>";
+        }
+    }
 }
+
 ?>
