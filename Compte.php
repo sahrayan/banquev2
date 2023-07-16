@@ -47,5 +47,10 @@ class Compte{
     public function __toString(){
         return $this->getSolde() .$this->getDevise() .$this->getTitulaire() ."<br>";
     }
+
+    public function Crediter($montant){
+        $this->_solde += $montant;
+        echo "Vous venez de crediter de ".$montant." euro <br>";
+    }
 }
 ?>
