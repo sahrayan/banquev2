@@ -8,11 +8,13 @@ $titu2 = new Titulaire('MOHAMMED ',' Foued',"05-11-1997 ",'Strasbourg');
 
 $compte1 =new Compte("Livret B",500,"euro",$titu1);
 $compte2 =new Compte("Livret A",20,"euro",$titu2);
-$titu1->DispInfo();
-$titu2->DispInfo();
+$compte3 =new Compte("Livret A",100,"euro",$titu1);
+// $titu1->DispInfo();
+// $titu2->DispInfo();
+$compte1->afficherInformationsCompte();
 
 
-$montantVirement = 300;
-$compte1->virementVersCompte($compte2, $montantVirement);
-$titu2->DispInfo();
+// $compte1->virementVersCompte($compte2, 600);
+// $titu2->DispInfo();
+// $titu1->DispInfo();
 ?>
