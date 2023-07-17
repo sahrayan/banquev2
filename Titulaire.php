@@ -59,11 +59,11 @@ class Titulaire{
         $dateNaissance = date_create($this->_date);
         $aujourdhui = date("Y-m-d");
         $age = date_diff($dateNaissance, date_create($aujourdhui));
-        echo $this->_nom."<br>";
-        echo $this->_prenom."<br>";
+        echo $this->_nom." ";
+        echo $this->_prenom." ";
         //format de l'age
         echo $age->format('%y ans')."<br>";
-        echo $this->_ville."<br>";
+        echo $this->_ville." ";
     
 //utilise foreach pour afficher la list des comptes
             foreach($this->_compte as $compte){
@@ -72,7 +72,7 @@ class Titulaire{
     }
 
     public function __toString(){
-        return $this->getNom()."<br>".$this->getPrenom()."<br>". $this->DispInfo()."<br>". $this->getVille()."<br>";
+        return $this->getNom()." ".$this->getPrenom()."<br>". $this->DispInfo()."<br>". $this->getVille()."<br>";
         foreach ($this->_compte as $compte){
             echo $compte."<br>";
         }
