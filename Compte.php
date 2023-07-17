@@ -60,13 +60,21 @@ class Compte{
         if ($this->_solde >= $montant) {
             $this->Debiter($montant);
             $compteDestination->Crediter($montant);
-            echo "Virement de {$montant} {$this->_devise} effectué avec succès vers le compte de {$compteDestination->getTitulaire()->getPrenom()} {$compteDestination->getTitulaire()->getNom()}" . PHP_EOL;
+            echo "Virement de {$montant} {$this->_devise} effectué avec succès vers le compte de {$compteDestination->getTitulaire()->getPrenom()} {$compteDestination->getTitulaire()->getNom()}<br>";
         } else {
-            echo "Solde insuffisant pour effectuer le virement." . PHP_EOL;
+            echo "Solde insuffisant pour effectuer le virement." ;
         }
     }
     public function BanqueInfo(){
         echo "445463715442****<br>".$this->_libelle."<br>".$this->_solde." ".$this->_devise."<br>";
     }
+
+    public function afficherInformationsCompte() {
+        echo "Titulaire du compte : " . $this->getTitulaire()->getPrenom() . " " . $this->getTitulaire()->getNom()."<br>";
+        echo "Libellé du compte : " . $this->getLibelle(). "<br>";
+        echo "Solde du compte : " . $this->getSolde() . " " . $this->getDevise()."<br>";
+        echo "Numéro de compte : 445463715442****<br>";
+    }
+    
 }
 ?>
